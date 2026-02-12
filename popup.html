@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Grok Auto Creator</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Grok Auto Creator</h1>
+      <p class="hint">พิมพ์ prompt แล้วสั่ง automation ไปที่หน้า Grok ที่เปิดอยู่</p>
+
+      <label for="prompt">Prompt</label>
+      <textarea
+        id="prompt"
+        rows="6"
+        placeholder="เช่น cinematic cyberpunk city, neon lights, ultra detailed"
+      ></textarea>
+
+      <div class="actions">
+        <button id="imageBtn" class="primary">Generate Image</button>
+        <button id="videoBtn" class="secondary">Generate Video</button>
+      </div>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
