@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Grok Auto Creator",
+  "description": "Automate Grok image/video prompt submission from a Chrome extension popup.",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "https://grok.com/*",
+    "https://x.com/i/grok*",
+    "https://twitter.com/i/grok*"
+  ],
+  "action": {
+    "default_title": "Grok Auto Creator",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://grok.com/*",
+        "https://x.com/i/grok*",
+        "https://twitter.com/i/grok*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
