@@ -15,7 +15,21 @@ async function getActiveTab() {
 
 function isLikelyGrokUrl(url) {
   if (!url) return false;
-  return /grok\.com|x\.com|twitter\.com/.test(url);
+
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname;
+    const path = parsed.pathname;
+
+    if (host === 'grok.com') return true;
+    if (host === 'x.com' || host === 'twitter.com') {
+      return path === '/i/grok' || path.startsWith('/i/grok/');
+    }
+
+    return false;
+  } catch {
+    return false;
+  }
 }
 
 async function sendAction(mode) {

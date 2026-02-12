@@ -6,8 +6,8 @@
   "permissions": ["activeTab", "scripting", "tabs"],
   "host_permissions": [
     "https://grok.com/*",
-    "https://x.com/*",
-    "https://twitter.com/*"
+    "https://x.com/i/grok*",
+    "https://twitter.com/i/grok*"
   ],
   "action": {
     "default_title": "Grok Auto Creator",
@@ -21,8 +21,8 @@
     {
       "matches": [
         "https://grok.com/*",
-        "https://x.com/*",
-        "https://twitter.com/*"
+        "https://x.com/i/grok*",
+        "https://twitter.com/i/grok*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
